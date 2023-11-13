@@ -16,6 +16,12 @@ const styles = StyleSheet.create({
     fontSize: SIZES.large,
     color: COLORS.lightWhite,
   },
+  descriptionText: {
+    fontFamily: FONT.regular,
+    fontSize: 15,
+    textAlign: 'center',
+    color: COLORS.lightWhite,
+  },
   tealText: {
     fontFamily: FONT.regular,
     fontSize: SIZES.large,
@@ -73,15 +79,17 @@ const styles = StyleSheet.create({
     marginTop: SIZES.medium,
   },
   tab: (activeJobType, item) => ({
-    paddingVertical: SIZES.xxLarge / 2,
+    paddingVertical: 100 / 2,
     paddingHorizontal: SIZES.small,
     borderRadius: SIZES.xSmall,
-    borderWidth: 3.5,
-    borderColor: activeJobType === item ? COLORS.teal : COLORS.teal,
+    borderWidth: 3,
+    borderColor: activeJobType === item ? COLORS.gray2 : COLORS.gray2,
   }),
   tabText: (activeJobType, item) => ({
     fontFamily: FONT.medium,
-    color: activeJobType === item ? COLORS.gray2 : COLORS.gray2,
+    fontSize: SIZES.large,
+    textAlign: 'center',
+    color: activeJobType === item ? COLORS.teal : COLORS.teal,
   }),
 });
 
