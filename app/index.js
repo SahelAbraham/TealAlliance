@@ -16,7 +16,7 @@ const Home = () => {
                     headerStyle: {backgroundColor: COLORS.teal},
                     headerShadowVisible: false,
                     headerLeft: () => (
-                        <ScreenHeaderBtn iconUrl={icons.tvhead} dimension = "125%" />
+                        <ScreenHeaderBtn iconUrl={icons.menu} dimension = "125%" />
                     ),
                     headerRight: () => (
                         <ScreenHeaderBtn iconUrl={images.tvhead} dimension = "225%" />
