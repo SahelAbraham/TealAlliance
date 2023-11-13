@@ -23,27 +23,8 @@ const Welcome = () => {
   return (
     <View>
       <View style = {styles.container}>
-        <Text style = {styles.userName}> Hello Scouter </Text>
-        <Text style = {styles.welcomeMessage}> Welcome to TealAlliance </Text>
-      </View>
-
-      <View style = {styles.searchContainer}>
-        <View style = {styles.searchWrapper}>
-          <TextInput
-            styles = {styles.searchInput}
-            value = ""
-            onChange = {() => {}}
-            placeholder = ""
-          />
-        </View>
-
-        <TouchableOpacity style = {styles.searchBtn} onPress={() => {}}>
-          <Image
-            source = {icons.search}
-            resizeMode = "contain"
-            style = {styles.searchBtnImage}
-          />
-        </TouchableOpacity>
+        <Text style = {styles.BigTeal}> Welcome to TealAlliance </Text>
+        <Text style = {styles.whiteText}> Select Your Current Role </Text>
       </View>
 
       <View style = {styles.tabsContainer}>
@@ -52,10 +33,16 @@ const Welcome = () => {
           renderItem = {({ item}) => (
             <TouchableOpacity
             style = {styles.tab(activeJobType, item)}
+            onPress = {() => {
+              setActiveJobType(item);
+              router.push('/search/${item}')
+            }}
             >
-              <Text>{item}</Text>
+              <Text style = {styles.tabText(activeJobType, item)}>{item}</Text>
             </TouchableOpacity>
           )}
+          keyExtractor = {item => item}
+          contentContainerStyle = {{columnGap: SIZES.small}}
         />
       </View>
 

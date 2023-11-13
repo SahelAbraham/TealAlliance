@@ -10,18 +10,18 @@ const Home = () => {
     const router = useRouter();
 
     return(
-        <SafeAreaView style={{flex: 1, backgroundColor: COLORS.lightWhite }}>
+        <SafeAreaView style={{flex: 1, backgroundColor: COLORS.black2 }}>
             <Stack.Screen
                 options = {{
-                    headerStyle: {backgroundColor: COLORS.lightWhite},
+                    headerStyle: {backgroundColor: COLORS.teal},
                     headerShadowVisible: false,
                     headerLeft: () => (
-                        <ScreenHeaderBtn iconUrl={icons.menu} dimension = "60%" />
+                        <ScreenHeaderBtn iconUrl={icons.menu} dimension = "125%" />
                     ),
                     headerRight: () => (
-                        <ScreenHeaderBtn iconUrl={images.tvhead} dimension = "100%" />
+                        <ScreenHeaderBtn iconUrl={images.tvhead} dimension = "225%" />
                     ),
-                    headerTitle: ""
+                    headerTitle: "Home"
                 }}
             />
 
@@ -35,8 +35,6 @@ const Home = () => {
                         <Welcome
                         
                         />
-                        <Popularjobs />
-                        <Nearbyjobs />
                     </View>
             </ScrollView>
 

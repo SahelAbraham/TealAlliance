@@ -11,10 +11,26 @@ const styles = StyleSheet.create({
     fontSize: SIZES.large,
     color: COLORS.secondary,
   },
+  whiteText: {
+    fontFamily: FONT.regular,
+    fontSize: SIZES.large,
+    color: COLORS.lightWhite,
+  },
+  tealText: {
+    fontFamily: FONT.regular,
+    fontSize: SIZES.large,
+    color: COLORS.teal,
+  },
   welcomeMessage: {
     fontFamily: FONT.bold,
     fontSize: SIZES.xLarge,
     color: COLORS.primary,
+    marginTop: 2,
+  },
+  BigTeal: {
+    fontFamily: FONT.bold,
+    fontSize: SIZES.xLarge,
+    color: COLORS.teal,
     marginTop: 2,
   },
   searchContainer: {
@@ -57,15 +73,15 @@ const styles = StyleSheet.create({
     marginTop: SIZES.medium,
   },
   tab: (activeJobType, item) => ({
-    paddingVertical: SIZES.small / 2,
+    paddingVertical: SIZES.xxLarge / 2,
     paddingHorizontal: SIZES.small,
-    borderRadius: SIZES.medium,
-    borderWidth: 1,
-    borderColor: activeJobType === item ? COLORS.secondary : COLORS.gray2,
+    borderRadius: SIZES.xSmall,
+    borderWidth: 3.5,
+    borderColor: activeJobType === item ? COLORS.teal : COLORS.teal,
   }),
   tabText: (activeJobType, item) => ({
     fontFamily: FONT.medium,
-    color: activeJobType === item ? COLORS.secondary : COLORS.gray2,
+    color: activeJobType === item ? COLORS.gray2 : COLORS.gray2,
   }),
 });
 
