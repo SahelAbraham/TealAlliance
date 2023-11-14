@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
   }),
   tabText: (item) => ({
     fontFamily: FONT.medium,
-    fontSize: SIZES.large,
+    fontSize: SIZES.xLarge,
     textAlign: 'center',
     color: COLORS.teal
   }),

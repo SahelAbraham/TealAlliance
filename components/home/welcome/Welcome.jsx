@@ -13,9 +13,10 @@ import { useRouter } from 'expo-router';
 import styles from './welcome.style'
 import { icons, SIZES } from '../../../constants';
 
-const jobs = [{jobName: "Stand Scouter", jobDescription: "Record match data from the stands for the team you are assigned to, then present the resultant QR code to Stand Scout Admin"},
-              {jobName: "Stand Scouter Admin", jobDescription: "Upload data recored from stand scouters to the pit computer via USB cable"},
-              {jobName: "Pit Scouter", jobDescription: "Record pit scouting data from the teams you are assigned to, then upload the data via USB cable to the pit computer"}]
+const jobs = [{jobName: "Stand Scouter"},
+              {jobName: "Pit Scouter"},
+              {jobName: "Drive Team"},
+              {jobName: "Stand Scouter Admin"}]
 
 const Welcome = () => {
   const router = useRouter();
@@ -39,7 +40,6 @@ const Welcome = () => {
             }}
             >
               <Text style = {styles.tabText(item)}>{item.jobName}</Text>
-              <Text style = {styles.descriptionText}>{item.jobDescription}</Text>
             </TouchableOpacity>
           )}
           keyExtractor = {item => item}
