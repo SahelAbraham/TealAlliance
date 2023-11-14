@@ -13,7 +13,7 @@ import { useRouter } from 'expo-router';
 import styles from './welcome.style'
 import { icons, SIZES } from '../../../constants';
 
-
+const jobTypes = ["Stand Scouter", "Stand Scouter Admin", "Pit Scouter"]
 const jobs = [{jobName: "Stand Scouter", jobDescription: "Record match data from the stands for the team you are assigned to, then present the resultant QR code to Stand Scout Admin"},
               {jobName: "Stand Scouter Admin", jobDescription: "Upload data recored from stand scouters to the pit computer via USB cable"},
               {jobName: "Pit Scouter", jobDescription: "Record pit scouting data from the teams you are assigned to, then upload the data via USB cable to the pit computer"}]
@@ -41,10 +41,6 @@ const Welcome = () => {
               router.push('/search/${item}')
             }}
             >
-            <ListItem
-            title={`${item.name.first} ${item.name.last}`}
-            subtitle={item.email}
-         />
               <Text style = {styles.tabText(activeJobType, item)}>{item}</Text>
             </TouchableOpacity>
           )}
