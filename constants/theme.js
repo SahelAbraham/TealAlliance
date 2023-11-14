@@ -27,6 +27,7 @@ const SIZES = {
   medium: 16,
   large: 20,
   xLarge: 24,
+  moreXLarge: 30,
   xxLarge: 32,
 };
 
