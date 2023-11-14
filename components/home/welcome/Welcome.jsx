@@ -19,7 +19,6 @@ const jobs = [{jobName: "Stand Scouter", jobDescription: "Record match data from
 
 const Welcome = () => {
   const router = useRouter();
-  const [activeJobType, setActiveJobType] = useState('Full-time')
 
 
   return (
@@ -34,14 +33,13 @@ const Welcome = () => {
           data = {jobs}
           renderItem = {({ item }) => (
             <TouchableOpacity
-            style = {styles.tab(activeJobType, item)}
+            style = {styles.tab(item)}
             onPress = {() => {
-              setActiveJobType(jobs);
               router.push('/search/${item}')
             }}
             >
-              <Text style = {styles.tabText(activeJobType, item)}>{item.jobName}</Text>
-              <Text style = {styles.tabText(activeJobType, item)}>{item.jobDescription}</Text>
+              <Text style = {styles.tabText(item)}>{item.jobName}</Text>
+              <Text style = {styles.descriptionText}>{item.jobDescription}</Text>
             </TouchableOpacity>
           )}
           keyExtractor = {item => item}

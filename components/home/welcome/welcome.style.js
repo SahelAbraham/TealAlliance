@@ -16,12 +16,6 @@ const styles = StyleSheet.create({
     fontSize: SIZES.large,
     color: COLORS.lightWhite,
   },
-  descriptionText: {
-    fontFamily: FONT.regular,
-    fontSize: 15,
-    textAlign: 'center',
-    color: COLORS.lightWhite,
-  },
   tealText: {
     fontFamily: FONT.regular,
     fontSize: SIZES.large,
@@ -78,19 +72,25 @@ const styles = StyleSheet.create({
     width: "100%",
     marginTop: SIZES.medium,
   },
-  tab: (activeJobType, item) => ({
+  tab: (item) => ({
     paddingVertical: 100 / 2,
     paddingHorizontal: SIZES.small,
     borderRadius: SIZES.xSmall,
     borderWidth: 3,
-    borderColor: activeJobType === item ? COLORS.gray2 : COLORS.gray2,
+    borderColor: COLORS.gray2,
   }),
-  tabText: (activeJobType, item) => ({
+  tabText: (item) => ({
     fontFamily: FONT.medium,
     fontSize: SIZES.large,
     textAlign: 'center',
-    color: activeJobType === item ? COLORS.teal : COLORS.teal,
+    color: COLORS.teal
   }),
+  descriptionText: {
+    fontFamily: FONT.medium,
+    fontSize: SIZES.large,
+    textAlign: 'center',
+    color: COLORS.lightWhite
+  }
 });
 
 export default styles;
