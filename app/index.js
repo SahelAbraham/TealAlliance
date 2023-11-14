@@ -4,6 +4,7 @@ import { Stack, useRouter } from 'expo-router';
 
 import { COLORS, icons, images, SIZES } from '../constants';
 import { Nearbyjobs, Popularjobs, ScreenHeaderBtn, Welcome } from '../components'
+import { Footer } from '../components/common/footer/Footer'
 
 const Home = () => {
 
@@ -21,8 +22,10 @@ const Home = () => {
                     headerRight: () => (
                         <ScreenHeaderBtn iconUrl={images.tvhead} dimension = "225%" />
                     ),
-                    headerTitle: "Home"
+                    headerTitle: "Home",
+                    
                 }}
+                
             />
 
             <ScrollView showVerticalScrollIndicator = {false}>
