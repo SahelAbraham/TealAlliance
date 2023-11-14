@@ -21,10 +21,10 @@ const Home = () => {
                     headerRight: () => (
                         <ScreenHeaderBtn iconUrl={images.tvhead} dimension = "225%" />
                     ),
-                    headerTitle: "Home",
-                    headerTitleAlign: 'center'
+                    headerTitle: "Home"
                 }}
             />
+
             <ScrollView showVerticalScrollIndicator = {false}>
                 <View
                     style = {{
@@ -37,7 +37,7 @@ const Home = () => {
                         />
                     </View>
             </ScrollView>
-            
+
         </SafeAreaView>
     )
 }
