@@ -34,7 +34,7 @@ const Welcome = () => {
           data = {jobs}
           renderItem = {({ item }) => (
             <TouchableOpacity
-            style = {[styles.tab(item), {marginBottom: SIZES.small}]}
+            style = {[styles.tab(item), {marginBottom: SIZES.xLarge }]}
             onPress = {() => {
               router.push('/search/${item}')
             }}

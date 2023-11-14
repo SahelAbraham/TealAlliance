@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
   },
   BigTeal: {
     fontFamily: FONT.bold,
-    fontSize: SIZES.xLarge,
+    fontSize: SIZES.moreXLarge,
     color: COLORS.teal,
     marginTop: 2,
   },
@@ -70,10 +70,10 @@ const styles = StyleSheet.create({
   },
   tabsContainer: {
     width: "100%",
-    marginTop: SIZES.medium,
+    marginTop: SIZES.large,
   },
   tab: (item) => ({
-    paddingVertical: 50 / 2,
+    paddingVertical: 30 / 2,
     paddingHorizontal: SIZES.small,
     borderRadius: SIZES.xLarge,
     borderWidth: 3,
@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
   }),
   descriptionText: {
     fontFamily: FONT.medium,
-    fontSize: SIZES.large,
+    fontSize: SIZES.medium,
     textAlign: 'center',
     color: COLORS.lightWhite
   }
