@@ -13,7 +13,6 @@ import { useRouter } from 'expo-router';
 import styles from './welcome.style'
 import { icons, SIZES } from '../../../constants';
 
-const jobTypes = ["Stand Scouter", "Stand Scouter Admin", "Pit Scouter"]
 const jobs = [{jobName: "Stand Scouter", jobDescription: "Record match data from the stands for the team you are assigned to, then present the resultant QR code to Stand Scout Admin"},
               {jobName: "Stand Scouter Admin", jobDescription: "Upload data recored from stand scouters to the pit computer via USB cable"},
               {jobName: "Pit Scouter", jobDescription: "Record pit scouting data from the teams you are assigned to, then upload the data via USB cable to the pit computer"}]
@@ -32,16 +31,17 @@ const Welcome = () => {
 
       <View style = {styles.tabsContainer}>
         <FlatList 
-          data = {jobTypes}
+          data = {jobs}
           renderItem = {({ item }) => (
             <TouchableOpacity
             style = {styles.tab(activeJobType, item)}
             onPress = {() => {
-              setActiveJobType(jobTypes);
+              setActiveJobType(jobs);
               router.push('/search/${item}')
             }}
             >
-              <Text style = {styles.tabText(activeJobType, item)}>{item}</Text>
+              <Text style = {styles.tabText(activeJobType, item)}>{item.jobName}</Text>
+              <Text style = {styles.tabText(activeJobType, item)}>{item.jobDescription}</Text>
             </TouchableOpacity>
           )}
           keyExtractor = {item => item}
