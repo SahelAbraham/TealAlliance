@@ -25,7 +25,6 @@ const Home = () => {
                     headerTitleAlign: 'center'
                 }}
             />
-
             <ScrollView showVerticalScrollIndicator = {false}>
                 <View
                     style = {{

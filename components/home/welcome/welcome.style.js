@@ -73,9 +73,9 @@ const styles = StyleSheet.create({
     marginTop: SIZES.medium,
   },
   tab: (item) => ({
-    paddingVertical: 100 / 2,
+    paddingVertical: 50 / 2,
     paddingHorizontal: SIZES.small,
-    borderRadius: SIZES.xSmall,
+    borderRadius: SIZES.xLarge,
     borderWidth: 3,
     borderColor: COLORS.gray2,
   }),
