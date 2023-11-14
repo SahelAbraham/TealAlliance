@@ -37,7 +37,7 @@ const Home = () => {
                         />
                     </View>
             </ScrollView>
-
+            
         </SafeAreaView>
     )
 }
