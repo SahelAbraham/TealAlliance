@@ -6,7 +6,7 @@ import { COLORS, icons, images, SIZES } from '../constants';
 import { ScreenHeaderBtn, Welcome } from '../components'
 import { Footer } from '../components/common/footer/Footer'
 
-const Home = () => {
+export default function Home(){
 
     const router = useRouter();
 
@@ -43,5 +43,3 @@ const Home = () => {
         </SafeAreaView>
     )
 }
-
-export default Home;
