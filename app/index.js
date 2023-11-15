@@ -22,7 +22,8 @@ const Home = () => {
                     headerRight: () => (
                         <ScreenHeaderBtn iconUrl={images.tvhead} dimension = "225%" />
                     ),
-                    headerTitle: "Home"
+                    headerTitle: "Home",
+                    headerTitleAlign: "Center"
                 }}
                 
             />
