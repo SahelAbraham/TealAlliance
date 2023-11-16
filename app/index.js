@@ -3,7 +3,7 @@ import { View, ScrollView, SafeAreaView } from 'react-native';
 import { Stack, useRouter } from 'expo-router';
 
 import { COLORS, icons, images, SIZES } from '../constants';
-import { ScreenHeaderBtn, Welcome } from '../components'
+import { ScreenHeaderBtn, Welcome, Scouting_basic_info } from '../components'
 import { Footer } from '../components/common/footer/Footer'
 
 export default function Home(){
