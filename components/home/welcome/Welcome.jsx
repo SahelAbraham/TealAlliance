@@ -15,7 +15,7 @@ import { icons, SIZES } from '../../../constants';
 
 const jobs = ["Stand Scouter", "Pit Scouter", "Drive Team", "Stand Scouter Admin"]
 
-const Welcome = () => {
+function Welcome() {
   const router = useRouter();
 
 
@@ -33,7 +33,7 @@ const Welcome = () => {
             <TouchableOpacity
             style = {[styles.tab(item), {marginBottom: SIZES.xLarge }]}
             onPress = {() => {
-              router.push('/search/${item}')
+              router.push('/standScouterAdmin')
             }}
             >
               <Text style = {styles.tabText(item)}>{item}</Text>

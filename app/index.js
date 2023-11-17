@@ -1,10 +1,56 @@
 import { useState } from 'react';
-import { View, ScrollView, SafeAreaView } from 'react-native';
-import { Stack, useRouter } from 'expo-router';
+import { Stack, useRouter, Link } from 'expo-router';
 
 import { COLORS, icons, images, SIZES } from '../constants';
-import { ScreenHeaderBtn, Welcome, Scouting_basic_info } from '../components'
+import { ScreenHeaderBtn, Scouting_basic_info } from '../components'
 import { Footer } from '../components/common/footer/Footer'
+
+import { 
+  View,
+  ScrollView,
+  SafeAreaView,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  Image,
+  FlatList
+ } from 'react-native'
+
+import styles from '../components/home/welcome/welcome.style'
+
+const jobs = ["Stand Scouter", "Pit Scouter", "Drive Team", "Stand Scouter Admin"]
+
+function Welcome() {
+    const router = useRouter();
+  
+  
+    return (
+      <View>
+        <View style = {styles.container}>
+          <Text style = {styles.BigTeal}> Welcome to TealAlliance </Text>
+          <Text style = {styles.whiteText}> Select Your Current Role </Text>
+        </View>
+  
+        <View style = {styles.tabsContainer}>
+          <FlatList 
+            data = {jobs}
+            renderItem = {({ item }) => (
+              <TouchableOpacity
+              style = {[styles.tab(item), {marginBottom: SIZES.xLarge }]}
+              onPress = {() => {
+                router.push('/standScouterAdmin')
+              }}
+              >
+                <Text style = {styles.tabText(item)}>{item}</Text>
+              </TouchableOpacity>
+            )}
+            keyExtractor = {item => item}
+            contentContainerStyle = {{columnGap: SIZES.small}}
+          />
+        </View>
+      </View>
+    )
+  }
 
 export default function Home(){
 
