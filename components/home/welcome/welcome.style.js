@@ -11,26 +11,10 @@ const styles = StyleSheet.create({
     fontSize: SIZES.large,
     color: COLORS.secondary,
   },
-  whiteText: {
-    fontFamily: FONT.regular,
-    fontSize: SIZES.large,
-    color: COLORS.lightWhite,
-  },
-  tealText: {
-    fontFamily: FONT.regular,
-    fontSize: SIZES.large,
-    color: COLORS.teal,
-  },
   welcomeMessage: {
     fontFamily: FONT.bold,
     fontSize: SIZES.xLarge,
     color: COLORS.primary,
-    marginTop: 2,
-  },
-  BigTeal: {
-    fontFamily: FONT.bold,
-    fontSize: SIZES.moreXLarge,
-    color: COLORS.teal,
     marginTop: 2,
   },
   searchContainer: {
@@ -70,27 +54,19 @@ const styles = StyleSheet.create({
   },
   tabsContainer: {
     width: "100%",
-    marginTop: SIZES.large,
+    marginTop: SIZES.medium,
   },
-  tab: (item) => ({
-    paddingVertical: 30 / 2,
+  tab: (activeJobType, item) => ({
+    paddingVertical: SIZES.small / 2,
     paddingHorizontal: SIZES.small,
-    borderRadius: SIZES.xLarge,
-    borderWidth: 3,
-    borderColor: COLORS.gray2,
+    borderRadius: SIZES.medium,
+    borderWidth: 1,
+    borderColor: activeJobType === item ? COLORS.secondary : COLORS.gray2,
   }),
-  tabText: (item) => ({
+  tabText: (activeJobType, item) => ({
     fontFamily: FONT.medium,
-    fontSize: SIZES.xLarge,
-    textAlign: 'center',
-    color: COLORS.teal
+    color: activeJobType === item ? COLORS.secondary : COLORS.gray2,
   }),
-  descriptionText: {
-    fontFamily: FONT.medium,
-    fontSize: SIZES.medium,
-    textAlign: 'center',
-    color: COLORS.lightWhite
-  }
 });
 
 export default styles;

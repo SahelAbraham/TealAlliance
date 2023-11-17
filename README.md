@@ -1,5 +1,3 @@
-# TealScout_303
-A scouting app to be used in competitions for the FRC Team 303
 # Expo Router Example
 
 Use [`expo-router`](https://expo.github.io/router) to build native navigation using files in the `app/` directory.

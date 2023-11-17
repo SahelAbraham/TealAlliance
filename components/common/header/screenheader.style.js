@@ -4,10 +4,10 @@ import { COLORS, SIZES } from "../../../constants";
 
 const styles = StyleSheet.create({
   btnContainer: {
-    width: 20,
-    height: 20,
-    backgroundColor: COLORS.teal,
-    borderRadius: SIZES.xLarge / 1.25,
+    width: 40,
+    height: 40,
+    backgroundColor: COLORS.white,
+    borderRadius: SIZES.small / 1.25,
     justifyContent: "center",
     alignItems: "center",
   },

@@ -1,7 +1,5 @@
-import tvhead from "../assets/images/tvhead.png";
-import LogoGif from "../assets/images/LogoGIF.gif"
+import profile from "../assets/images/kemal.jpg";
 
 export default {
-  tvhead,
-  LogoGif
+  profile,
 };

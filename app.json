@@ -7,7 +7,7 @@
     "plugins": [
       "expo-router"
     ],
-    "name": "TealScout",
-    "slug": "TealScout"
+    "name": "Tutorial2",
+    "slug": "Tutorial2"
   }
 }
