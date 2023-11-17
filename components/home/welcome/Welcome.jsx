@@ -13,10 +13,7 @@ import { useRouter, Link } from 'expo-router';
 import styles from './welcome.style'
 import { icons, SIZES } from '../../../constants';
 
-const jobs = [{jobName: "Stand Scouter"},
-              {jobName: "Pit Scouter"},
-              {jobName: "Drive Team"},
-              {jobName: "Stand Scouter Admin"}]
+const jobs = ["Stand Scouter", "Pit Scouter", "Drive Team", "Stand Scouter Admin"]
 
 const Welcome = () => {
   const router = useRouter();
@@ -39,14 +36,13 @@ const Welcome = () => {
               router.push('/search/${item}')
             }}
             >
-              <Text style = {styles.tabText(item)}>{item.jobName}</Text>
+              <Text style = {styles.tabText(item)}>{item}</Text>
             </TouchableOpacity>
           )}
           keyExtractor = {item => item}
           contentContainerStyle = {{columnGap: SIZES.small}}
         />
       </View>
-
     </View>
   )
 }

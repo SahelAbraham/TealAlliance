@@ -26,7 +26,7 @@ const Scouting_basic_info = () => {
   return (
     <View>
       <View style = {styles.container}>
-        <Text style = {styles.BigTeal}> Welcome to TealAlliance </Text>
+        <Text style = {styles.BigTeal}> STAND SCOUTING ADMIN </Text>
         <Text style = {styles.whiteText}> Select Your Current Role </Text>
       </View>
 

@@ -12,7 +12,7 @@ const admin = () => {
     return (
         <View>
           <View style = {styles.container}>
-            <Text style = {styles.BigTeal}> Welcome to TealAlliance </Text>
+            <Text style = {styles.BigTeal}> STAND SCOUTER ADMIN </Text>
             <Text style = {styles.whiteText}> Select Your Current Role </Text>
           </View>
     
