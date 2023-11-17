@@ -31,7 +31,7 @@ export default function StandScouter(){
                    headerRight: () => (
                        <ScreenHeaderBtn iconUrl={images.tvhead} dimension = "225%" />
                    ),
-                   headerTitle: "Stand Scouter ADMIN",
+                   headerTitle: "About Us",
                    headerTitleAlign: 'center'
                }}
                
@@ -41,8 +41,8 @@ export default function StandScouter(){
           flex: 1,
           padding: SIZES.medium
           }}>
-            <Text style = {styles.centeredBigTeal}> Hello Admin </Text>
-            <Text style = {styles.centeredWhiteText}> Scanned Scouting Data Will Appear Here</Text>
+            <Text style = {styles.BigTeal}> We Are 303 </Text>
+            <Text style = {styles.centeredWhiteText}> Team 303, founded in 1999...</Text>
           </View>
        </SafeAreaView>
    )

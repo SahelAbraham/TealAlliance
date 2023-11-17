@@ -62,7 +62,7 @@ export default function Home(){
                         <ScreenHeaderBtn iconUrl={icons.menu} dimension = "125%" />
                     ),
                     headerRight: () => (
-                        <ScreenHeaderBtn iconUrl={images.tvhead} dimension = "225%" />
+                        <ScreenHeaderBtn iconUrl={images.tvhead} dimension = "225%"/>
                     ),
                     headerTitle: "Home",
                     headerTitleAlign: 'center'
