@@ -19,10 +19,9 @@ import {
 import styles from '../components/home/welcome/welcome.style'
 
 const jobs = ["Stand Scouter", "Pit Scouter", "Drive Team", "Stand Scouter Admin"]
+const router = useRouter();
 
 function Welcome() {
-    const router = useRouter();
-  
   
     return (
       <View>
@@ -53,8 +52,6 @@ function Welcome() {
   }
 
 export default function Home(){
-
-    const router = useRouter();
 
     return(
         <SafeAreaView style={{flex: 1, backgroundColor: COLORS.black2 }}>

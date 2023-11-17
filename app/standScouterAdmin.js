@@ -5,7 +5,7 @@ import { Stack, useRouter } from 'expo-router';
 import { icons, images, SIZES } from '../components/index.js';
 import styles from '../components/home/welcome/welcome.style.js';
 
-const admin = () => {
+export default function admin(){
 
     const router = useRouter();
 
