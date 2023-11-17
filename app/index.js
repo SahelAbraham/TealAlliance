@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Stack, useRouter, Link } from 'expo-router';
 
 import { COLORS, icons, images, SIZES } from '../constants';
-import { ScreenHeaderBtn, Scouting_basic_info } from '../components'
+import { ScreenHeaderBtn } from '../components'
 import { Footer } from '../components/common/footer/Footer'
 
 import { 
@@ -19,10 +19,9 @@ import {
 import styles from '../components/home/welcome/welcome.style'
 
 const jobs = ["Stand Scouter", "Pit Scouter", "Drive Team", "Stand Scouter Admin"]
-const router = useRouter();
 
 function Welcome() {
-  
+   const router = useRouter();
     return (
       <View>
         <View style = {styles.container}>
@@ -37,7 +36,7 @@ function Welcome() {
               <TouchableOpacity
               style = {[styles.tab(item), {marginBottom: SIZES.xLarge }]}
               onPress = {() => {
-                router.push('/standScouterAdmin')
+                router.push('/StandScouterAdmin')
               }}
               >
                 <Text style = {styles.tabText(item)}>{item}</Text>
@@ -52,7 +51,7 @@ function Welcome() {
   }
 
 export default function Home(){
-
+   const router = useRouter();
     return(
         <SafeAreaView style={{flex: 1, backgroundColor: COLORS.black2 }}>
             <Stack.Screen
@@ -77,9 +76,8 @@ export default function Home(){
                         padding: SIZES.medium
                     }}
                     >
-                        <Welcome
+                        <Welcome/>
                         
-                        />
                     </View>
             </ScrollView>
 
