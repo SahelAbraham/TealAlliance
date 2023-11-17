@@ -16,6 +16,12 @@ const styles = StyleSheet.create({
     fontSize: SIZES.large,
     color: COLORS.lightWhite,
   },
+  centeredWhiteText: {
+    fontFamily: FONT.regular,
+    fontSize: SIZES.large,
+    color: COLORS.lightWhite,
+    textAlign: 'center'
+  },
   tealText: {
     fontFamily: FONT.regular,
     fontSize: SIZES.large,
@@ -32,6 +38,13 @@ const styles = StyleSheet.create({
     fontSize: SIZES.moreXLarge,
     color: COLORS.teal,
     marginTop: 2,
+  },
+  centeredBigTeal: {
+    fontFamily: FONT.bold,
+    fontSize: SIZES.moreXLarge,
+    color: COLORS.teal,
+    marginTop: 2,
+    textAlign: 'center'
   },
   searchContainer: {
     justifyContent: "center",

@@ -4,6 +4,7 @@ import { Stack, useRouter, Link } from 'expo-router';
 import { COLORS, icons, images, SIZES } from '../constants';
 import { ScreenHeaderBtn } from '../components'
 import { Footer } from '../components/common/footer/Footer'
+import styles from '../components/home/welcome/welcome.style'
 
 import { 
   View,
@@ -16,7 +17,6 @@ import {
   FlatList
  } from 'react-native'
 
-import styles from '../components/home/welcome/welcome.style'
 
 const jobs = ["Stand Scouter ADMIN", "Pit Scouter ADMIN", "Drive Team ADMIN", "Stand Scouter Admin ADMIN"]
 
@@ -34,23 +34,18 @@ export default function StandScouter(){
                    headerRight: () => (
                        <ScreenHeaderBtn iconUrl={images.tvhead} dimension = "225%" />
                    ),
-                   headerTitle: "Stand Scouter ADMIN"
+                   headerTitle: "Stand Scouter ADMIN",
                }}
                
            />
-
-           <ScrollView showVerticalScrollIndicator = {false}>
-               <View
-                   style = {{
-                       backgroundColor: COLORS.white,
-                       flex: 1,
-                       padding: SIZES.medium
-                   }}
-                   >
-                    <Text> hi </Text>   
-                   </View>
-           </ScrollView>
-
+        <View
+          style = {{
+          flex: 1,
+          padding: SIZES.medium
+          }}>
+            <Text style = {styles.centeredBigTeal}> Hello Admin </Text>
+            <Text style = {styles.centeredWhiteText}> Scanned Scouting Data Will Appear Here</Text>
+          </View>
        </SafeAreaView>
    )
 }
