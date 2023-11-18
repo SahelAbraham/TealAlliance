@@ -18,7 +18,24 @@ import {
 
 import styles from '../components/home/welcome/welcome.style'
 
-const jobs = ["Stand Scouter", "Pit Scouter", "Drive Team", "Stand Scouter Admin"]
+const jobs = [
+  {
+    name: "Stand Scouter",
+    route: "stand_scouter"  
+  }, 
+  {
+    name: "Pit Scouter",
+    route: "pit_scouter"  
+  }, 
+  {
+    name: "Drive Team",
+    route: "drive_team"  
+  }, 
+  {
+    name: "Stand Scouter Admin",
+    route: "stand_scouter_admin"  
+  }
+]
 
 function Welcome() {
    const router = useRouter();
@@ -34,15 +51,15 @@ function Welcome() {
             data = {jobs}
             renderItem = {({ item }) => (
               <TouchableOpacity
-              style = {[styles.tab(item), {marginBottom: SIZES.xLarge }]}
+              style = {[styles.tab(item.name), {marginBottom: SIZES.xLarge }]}
               onPress = {() => {
-                router.push('/stand_scouting/standScouter')
+                router.push(`/${item.route}`)
               }}
               >
-                <Text style = {styles.tabText(item)}>{item}</Text>
+                <Text style = {styles.tabText(item.name)}>{item.name}</Text>
               </TouchableOpacity>
             )}
-            keyExtractor = {item => item}
+            keyExtractor = {item => item.name}
             contentContainerStyle = {{columnGap: SIZES.small}}
           />
         </View>

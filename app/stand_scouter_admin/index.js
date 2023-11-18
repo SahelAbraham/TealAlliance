@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { Stack, useRouter, Link } from 'expo-router';
 
-import { COLORS, icons, images, SIZES } from '../constants';
-import { ScreenHeaderBtn } from '../components'
-import { Footer } from '../components/common/footer/Footer'
-import styles from '../components/home/welcome/welcome.style'
+import { COLORS, icons, images, SIZES } from '../../constants';
+import { ScreenHeaderBtn } from '../../components'
+import { Footer } from '../../components/common/footer/Footer'
+import styles from '../../components/home/welcome/welcome.style'
 
 import { 
   View,
