@@ -36,7 +36,7 @@ function Welcome() {
               <TouchableOpacity
               style = {[styles.tab(item), {marginBottom: SIZES.xLarge }]}
               onPress = {() => {
-                router.push('/StandScouterAdmin')
+                router.push('/standScouterAdmin')
               }}
               >
                 <Text style = {styles.tabText(item)}>{item}</Text>
