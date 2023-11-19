@@ -16,7 +16,7 @@ import {
   FlatList
  } from 'react-native'
 
-export default function standScouterAdmin(){
+export default function DriveTeam(){
   const router = useRouter();
    return(
        <SafeAreaView style={{flex: 1, backgroundColor: COLORS.black2 }}>
@@ -30,7 +30,7 @@ export default function standScouterAdmin(){
                    headerRight: () => (
                        <ScreenHeaderBtn iconUrl={images.tvhead} dimension = "225%" />
                    ),
-                   headerTitle: "Stand Scouting Admin",
+                   headerTitle: "Drive Team View",
                    headerTitleAlign: 'center'
                }}
                
@@ -40,8 +40,7 @@ export default function standScouterAdmin(){
           flex: 1,
           padding: SIZES.medium
           }}>
-            <Text style = {styles.centeredBigTeal}> Hello Admin </Text>
-            <Text style = {styles.centeredWhiteText}> Scanned Scouting Data Will Appear Here</Text>
+            <Text style = {styles.centeredBigTeal}> Hello Driver </Text>
           </View>
        </SafeAreaView>
    )

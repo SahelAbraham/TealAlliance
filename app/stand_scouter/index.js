@@ -3,7 +3,6 @@ import { Stack, useRouter, Link } from 'expo-router';
 
 import { COLORS, icons, images, SIZES } from '../../constants';
 import { ScreenHeaderBtn } from '../../components'
-// import { Footer } from '../../components/common/footer/Footer'
 import styles from '../../components/home/welcome/welcome.style'
 
 import { 
@@ -31,7 +30,7 @@ export default function StandScouter(){
                    headerRight: () => (
                        <ScreenHeaderBtn iconUrl={images.tvhead} dimension = "225%" />
                    ),
-                   headerTitle: "Stand Scouter",
+                   headerTitle: "Stand Scouting",
                    headerTitleAlign: 'center'
                }}
                
@@ -41,7 +40,7 @@ export default function StandScouter(){
           flex: 1,
           padding: SIZES.medium
           }}>
-            <Text style = {styles.centeredBigTeal}> Hello Scouter </Text>
+            <Text style = {styles.centeredBigTeal}> Hello Stand Scouter </Text>
             <Text style = {styles.centeredWhiteText}> Enter The Team You Are Scouting </Text>
           </View>
        </SafeAreaView>
