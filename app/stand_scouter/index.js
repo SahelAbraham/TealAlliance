@@ -5,6 +5,8 @@ import { COLORS, icons, images, SIZES } from '../../constants';
 import { ScreenHeaderBtn } from '../../components'
 import styles from '../../components/home/welcome/welcome.style'
 
+import { NativeBaseProvider, Box, extendTheme, Input, FormControl, Button, Center } from 'native-base';
+
 import { 
   View,
   ScrollView,
@@ -15,6 +17,10 @@ import {
   Image,
   FlatList
  } from 'react-native'
+
+const submit = () => {
+
+}
 
 export default function StandScouter(){
   const router = useRouter();
@@ -40,10 +46,23 @@ export default function StandScouter(){
           flex: 1,
           padding: SIZES.medium
           }}>
-            <Text style = {styles.centeredBigTeal}> Hello Stand Scouter </Text>
-            <Text style = {styles.centeredWhiteText}> Enter The Team You Are Scouting </Text>
+            <Text style = {styles.BigTeal}> Hello Stand Scouter </Text>
+            <NativeBaseProvider>
+            <Box alignItems={'center'} padding={4}>
+                <FormControl>
+                    <FormControl.Label> Enter Match Number </FormControl.Label>
+                <Input size = 'xl' placeholder='Match #'/>
+                </FormControl>
+            </Box>
+            <View style = {{flex: 1, position: 'absolute', alignSelf: 'center', bottom: 20}}>
+                <Center>
+                <Box alignItems={'center'}>
+                    <Button size = 'lg' onPress={submit} colorScheme = 'teal'> Start Scouting </Button>
+                </Box>
+                </Center>
+            </View>
+            </NativeBaseProvider>
           </View>
        </SafeAreaView>
    )
 }
-
