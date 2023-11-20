@@ -45,7 +45,7 @@ export default function StandScouter(){
         .required("Required"),
     }),
     onSubmit: (values, { resetForm }) => {
-        console.log(values);
+        console.log(values, allianceCol, allianceNum);
         resetForm({values: ""});
     },
   });
@@ -142,10 +142,9 @@ export default function StandScouter(){
                     <Button 
                     size = 'lg' 
                     backgroundColor = "Testy.100" 
-                    _text={{color:'black', fontWeight:'600'}} 
-                    onPress = {formik.handleSubmit} type = "submit"> 
-                    Start Scouting!
-                    </Button>
+                    _text={{color:'black', fontWeight:'700'}} 
+                    height = {75}
+                    onPress = {formik.handleSubmit} type = "submit">          Start Scouting!         </Button>
                 </Box>
             </View>
             </NativeBaseProvider>
