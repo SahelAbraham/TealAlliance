@@ -7,7 +7,22 @@ import styles from '../../components/home/welcome/welcome.style'
 import * as Formik from 'formik';
 import * as Yup from 'yup';
 
-import { NativeBaseProvider, Box, extendTheme, Input, FormControl, Button, Select, Text, Heading, HStack, Switch, Radio, Divider, VStack } from 'native-base';
+import { 
+    NativeBaseProvider, 
+    Box, 
+    extendTheme, 
+    Input, 
+    FormControl, 
+    Button, 
+    Select, 
+    Text, 
+    Heading, 
+    HStack, 
+    Switch, 
+    Radio, 
+    Divider, 
+    VStack 
+} from 'native-base';
 
 import { 
   View,
@@ -75,7 +90,7 @@ export default function StandScouter(){
           padding: SIZES.medium
           }}>
             <NativeBaseProvider theme = {theme}>
-            <Heading color = "white" size = "xl"> Hello Stand Scouter </Heading>
+            <Heading color = "white" size = "xl"> Pre-Match Scouting Form </Heading>
             <Heading color = "Testy.100" size = "lg" paddingTop={4}> Team and Match Number </Heading>
             <Box alignItems={'center'} padding={4} _text={{ fontsize: 'md', color: 'white'}}>
             <Text fontSize = 'md'color = 'white' alignSelf={'flex-start'}> Enter Match Number </Text>
@@ -149,7 +164,7 @@ export default function StandScouter(){
             </View>
             </NativeBaseProvider>
           </View>
-       </SafeAreaView>
+     </SafeAreaView>
     </TouchableWithoutFeedback>
    )
 }

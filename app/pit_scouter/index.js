@@ -31,6 +31,7 @@ export default function StandScouter(){
     },
   });
 
+  const [drivebaseType, setDrivebaseType] = React.useState("tank");
   const router = useRouter();
   const formik = Formik.useFormik({
     initialValues: { team_number: "", drive_base_width:"", drive_base_length:""},
@@ -49,7 +50,7 @@ export default function StandScouter(){
         .required("Required"),
     }),
     onSubmit: (values, { resetForm }) => {
-        console.log(values);
+        console.log(values, drivebaseType);
         resetForm({values: ""});
     },
   });
@@ -78,7 +79,7 @@ export default function StandScouter(){
           }}>
             
             <NativeBaseProvider theme = {theme}>
-            <Heading color = "white" size = "xl" > Hello Pit Scouter </Heading>
+            <Heading color = "white" size = "xl" > Pit Scouting Form </Heading>
             <Heading color = "Testy.100" size = "lg" paddingTop={4}> Team Number </Heading>
             <Box alignItems={'center'} padding={4} _text={{ fontsize: 'md', color: 'white'}}>
             <Text fontSize = 'md'color = 'white' alignSelf={'flex-start'}> Enter Team Being Scouted </Text>
@@ -96,9 +97,10 @@ export default function StandScouter(){
                     </Text>
                 ): null}
             </Box>
-            <Heading color = "Testy.100" size = "lg" paddingTop={3}> Drive Base </Heading>
+            <Divider my={2} thickness={3}></Divider>
+            <Heading color = "Testy.100" size = "lg" paddingTop={1}> Drive Base </Heading>
             <Box alignItems={'left'} padding={4} _text={{ fontsize: 'md', color: 'white'}}>
-            <VStack>
+            <Heading color = "white" size = "md" paddingBottom={3}> Dimensions </Heading>
             <Text fontSize = 'md'color = 'white' alignSelf={'flex-start'}> Width Without Bumpers (in inches) </Text>
                 <Input 
                     type = "drive_base_width"
@@ -113,8 +115,6 @@ export default function StandScouter(){
                         {formik.errors.drive_base_width}
                     </Text>
                 ): null}
-            </VStack>
-            <VStack>
             <Text marginTop = {3} fontSize = 'md'color = 'white' alignSelf={'flex-start'}> Length Without Bumpers (in inches) </Text>
                 <Input 
                     type = "drive_base_length"
@@ -129,8 +129,30 @@ export default function StandScouter(){
                         {formik.errors.drive_base_length}
                     </Text>
                 ): null}
-            </VStack>
+                <Heading color = "white" size = "md" paddingTop={4}> Drive Base Type </Heading>
+
+                <Radio.Group name = "Team Color" value = {drivebaseType} onChange = {nextvalue => {setDrivebaseType(nextvalue)}}>
+                    <HStack>
+                    <VStack>
+                    <Radio value = "tank" my = {5} marginLeft={3} _text={{ color: 'Testy.100', fontWeight:'600', fontSize: 'lg'}}>
+                        Tank Drive
+                    </Radio>
+                    <Radio value = "swerve" my = {2} marginLeft={3} _text={{color: 'Testy.100', fontWeight:'600', fontSize: 'lg'}}>
+                        Swerve Drive
+                    </Radio>
+                    </VStack>
+                    <VStack>
+                    <Radio value = "mecanum" my = {5} marginLeft={7} _text={{ color: 'Testy.100', fontWeight:'600', fontSize: 'lg'}}>
+                        Mecanum
+                    </Radio>
+                    <Radio value = "other" my = {2} marginLeft={7} _text={{color: 'Testy.100', fontWeight:'600', fontSize: 'lg'}}>
+                        Other
+                    </Radio>
+                    </VStack>
+                    </HStack>
+                </Radio.Group>
             </Box>
+            <Divider marginTop={2} thickness={3}></Divider>
             <View style = {{flex: 1, position: 'absolute', bottom: 30, alignSelf: 'center'}}>
                 <Box alignItems={'center'} safeAreaBottom>
                     <Button 
