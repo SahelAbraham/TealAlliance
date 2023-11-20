@@ -1,13 +1,16 @@
 import * as React from 'react';
 import { View, ScrollView, SafeAreaView } from 'react-native';
-import { Stack, useRouter } from 'expo-router';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import { COLORS, icons, images, SIZES } from '../constants';
-import { ScreenHeaderBtn, Welcome } from '../components'
-import { Footer } from '../components/common/footer/Footer'
+import WelcomeComponent from '../components/home/welcome/Welcome';
+import StandScouterAdminComponent from '../components/StandScouterAdminScreen';
 
+import { COLORS, icons, images, SIZES } from '../constants';
+import { ScreenHeaderBtn } from '../components';
+import { Footer } from '../components/common/footer/Footer';
+
+const Stack = createNativeStackNavigator();
 
 function Home(){
     
@@ -41,7 +44,13 @@ function Home(){
                             />
                         </View>
                 </ScrollView>
-
+                
+                <NavigationContainer>
+                    <Stack.Navigator>
+                        <Stack.Screen name="Welcome" component={WelcomeComponent} />
+                        <Stack.Screen name="Admin" component={StandScouterAdminComponent} />
+                    </Stack.Navigator>
+                </NavigationContainer>
             </SafeAreaView>
     )
 }
