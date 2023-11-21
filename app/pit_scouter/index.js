@@ -32,25 +32,26 @@ export default function StandScouter(){
   });
 
   const [drivebaseType, setDrivebaseType] = React.useState("tank");
+  const [drivebaseMotors, setDrivebaseMotors] = React.useState("neo");
   const router = useRouter();
   const formik = Formik.useFormik({
     initialValues: { team_number: "", drive_base_width:"", drive_base_length:""},
     validationSchema: Yup.object().shape({
         team_number: Yup.string()
         .max(4, "Too Long!")
-        .matches(/[1-9]/, "Team Number can only contain numbers.")
+        .matches(/[1-9]/, "Team Number can only contain numbers")
         .required("Required"),
         drive_base_width: Yup.string()
-        .max(3, "Too Long!")
-        .matches(/[1-9]/, "Team Number can only contain numbers.")
+        .max(2, "Too Long!")
+        .matches(/[1-9]/, "Dimensions should only include numbers")
         .required("Required"),
         drive_base_length: Yup.string()
-        .max(3, "Too Long!")
-        .matches(/[1-9]/, "Team Number can only contain numbers.")
+        .max(2, "Too Long!")
+        .matches(/[1-9]/, "Dimensions should only include numbers")
         .required("Required"),
     }),
     onSubmit: (values, { resetForm }) => {
-        console.log(values, drivebaseType);
+        console.log(values, drivebaseMotors, drivebaseType);
         resetForm({values: ""});
     },
   });
@@ -58,6 +59,7 @@ export default function StandScouter(){
    return(
     <TouchableWithoutFeedback onPress = {Keyboard.dismiss}>
        <SafeAreaView style={{flex: 1, backgroundColor: COLORS.black2 }}>
+       <ScrollView>
            <Stack.Screen
                options = {{
                    headerStyle: {backgroundColor: COLORS.teal},
@@ -100,27 +102,28 @@ export default function StandScouter(){
             <Divider my={2} thickness={3}></Divider>
             <Heading color = "Testy.100" size = "lg" paddingTop={1}> Drive Base </Heading>
             <Box alignItems={'left'} padding={4} _text={{ fontsize: 'md', color: 'white'}}>
-            <Heading color = "white" size = "md" paddingBottom={3}> Dimensions </Heading>
+            <Heading color = "white" size = "md" marginTop={2} marginBottom={4}> Dimensions </Heading>
             <Text fontSize = 'md'color = 'white' alignSelf={'flex-start'}> Width Without Bumpers (in inches) </Text>
                 <Input 
                     type = "drive_base_width"
                     style = {{color: 'white'}}
                     size = '2xl' 
-                    placeholder='Eg. 303'
+                    placeholder='Eg. 31'
                     onChangeText={formik.handleChange("drive_base_width")}
                     onBlur={formik.handleBlur("drive_base_width")} 
                     keyboardType='numeric'/>
+
                 {formik.errors.drive_base_width && formik.touched.drive_base_width ? (
                     <Text fontSize = 'sm' color = 'danger.500' alignSelf={'flex-start'}>
                         {formik.errors.drive_base_width}
                     </Text>
                 ): null}
-            <Text marginTop = {3} fontSize = 'md'color = 'white' alignSelf={'flex-start'}> Length Without Bumpers (in inches) </Text>
+            <Text marginTop = {6} fontSize = 'md'color = 'white' alignSelf={'flex-start'}> Length Without Bumpers (in inches) </Text>
                 <Input 
                     type = "drive_base_length"
                     style = {{color: 'white'}}
                     size = '2xl' 
-                    placeholder='Eg. 303'
+                    placeholder='Eg. 31'
                     onChangeText={formik.handleChange("drive_base_length")}
                     onBlur={formik.handleBlur("drive_base_length")} 
                     keyboardType='numeric'/>
@@ -129,7 +132,7 @@ export default function StandScouter(){
                         {formik.errors.drive_base_length}
                     </Text>
                 ): null}
-                <Heading color = "white" size = "md" paddingTop={4}> Drive Base Type </Heading>
+                <Heading color = "white" size = "md" marginTop={8}> Drive Base Type </Heading>
 
                 <Radio.Group name = "Team Color" value = {drivebaseType} onChange = {nextvalue => {setDrivebaseType(nextvalue)}}>
                     <HStack>
@@ -142,19 +145,40 @@ export default function StandScouter(){
                     </Radio>
                     </VStack>
                     <VStack>
-                    <Radio value = "mecanum" my = {5} marginLeft={7} _text={{ color: 'Testy.100', fontWeight:'600', fontSize: 'lg'}}>
+                    <Radio value = "mecanum" my = {5} marginLeft={8} _text={{ color: 'Testy.100', fontWeight:'600', fontSize: 'lg'}}>
                         Mecanum
                     </Radio>
-                    <Radio value = "other" my = {2} marginLeft={7} _text={{color: 'Testy.100', fontWeight:'600', fontSize: 'lg'}}>
-                        Other
+                    <Radio value = "holonomic" my = {2} marginLeft={8} _text={{color: 'Testy.100', fontWeight:'600', fontSize: 'lg'}}>
+                        Holonomic
+                    </Radio>
+                    </VStack>
+                    </HStack>
+                </Radio.Group>
+                <Heading color = "white" size = "md" marginTop={7}> Drive Motors </Heading>
+                <Radio.Group name = "Team Color" value = {drivebaseMotors} onChange = {nextvalue => {setDrivebaseMotors(nextvalue)}}>
+                    <HStack>
+                    <VStack>
+                    <Radio value = "neo" my = {5} marginLeft={3} _text={{ color: 'Testy.100', fontWeight:'600', fontSize: 'lg'}}>
+                        Neos
+                    </Radio>
+                    <Radio value = "falcon" my = {2} marginLeft={3} _text={{color: 'Testy.100', fontWeight:'600', fontSize: 'lg'}}>
+                        Falcons
+                    </Radio>
+                    </VStack>
+                    <VStack>
+                    <Radio value = "kraken" my = {5} marginLeft={20} _text={{ color: 'Testy.100', fontWeight:'600', fontSize: 'lg'}}>
+                        Krakens
+                    </Radio>
+                    <Radio value = "cim" my = {2} marginLeft={20} _text={{color: 'Testy.100', fontWeight:'600', fontSize: 'lg'}}>
+                        CIMs
                     </Radio>
                     </VStack>
                     </HStack>
                 </Radio.Group>
             </Box>
             <Divider marginTop={2} thickness={3}></Divider>
-            <View style = {{flex: 1, position: 'absolute', bottom: 30, alignSelf: 'center'}}>
-                <Box alignItems={'center'} safeAreaBottom>
+            <View style = {{flex: 1, alignSelf: 'center'}}>
+                <Box alignItems={'center'} my = {10}>
                     <Button 
                     size = 'lg' 
                     backgroundColor = "Testy.100" 
@@ -164,7 +188,9 @@ export default function StandScouter(){
                 </Box>
             </View>
             </NativeBaseProvider>
+            
           </View>
+          </ScrollView>
        </SafeAreaView>
     </TouchableWithoutFeedback>
    )
