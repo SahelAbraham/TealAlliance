@@ -35,8 +35,12 @@ export default function StandScouter(){
   const [drivebaseMotors, setDrivebaseMotors] = React.useState("neo");
   const router = useRouter();
   const formik = Formik.useFormik({
-    initialValues: { team_number: "", drive_base_width:"", drive_base_length:""},
+    initialValues: { team_number: "", drive_base_width:"", drive_base_length:"", cpg:""},
     validationSchema: Yup.object().shape({
+        cpg: Yup.string()
+        .max(4, "Too Long!")
+        .matches(/[1-9]/, "Cycles Per Game can only contain numbers")
+        .required("Required"),
         team_number: Yup.string()
         .max(4, "Too Long!")
         .matches(/[1-9]/, "Team Number can only contain numbers")
@@ -133,7 +137,6 @@ export default function StandScouter(){
                     </Text>
                 ): null}
                 <Heading color = "white" size = "md" marginTop={8}> Drive Base Type </Heading>
-
                 <Radio.Group name = "Team Color" value = {drivebaseType} onChange = {nextvalue => {setDrivebaseType(nextvalue)}}>
                     <HStack>
                     <VStack>
@@ -176,7 +179,26 @@ export default function StandScouter(){
                     </HStack>
                 </Radio.Group>
             </Box>
-            <Divider marginTop={2} thickness={3}></Divider>
+            <Divider my={2} thickness={3}></Divider>
+            <Heading color = "Testy.100" size = "lg" paddingTop={1}> Scoring Capabilities </Heading>
+            <Box alignItems={'left'} padding={4} _text={{ fontsize: 'md', color: 'white'}}>
+            <Heading color = "white" size = "md" marginTop={2} marginBottom={4}> Points </Heading>
+            <Text fontSize = 'md'color = 'white' alignSelf={'flex-start'}> Cycles Per Game </Text>
+                <Input 
+                    type = "drive_base_width"
+                    style = {{color: 'white'}}
+                    size = '2xl' 
+                    placeholder='Eg. 4'
+                    onChangeText={formik.handleChange("drive_base_width")}
+                    onBlur={formik.handleBlur("drive_base_width")} 
+                    keyboardType='numeric'/>
+
+                {formik.errors.drive_base_width && formik.touched.drive_base_width ? (
+                    <Text fontSize = 'sm' color = 'danger.500' alignSelf={'flex-start'}>
+                        {formik.errors.drive_base_width}
+                    </Text>
+                ): null}
+            </Box>
             <View style = {{flex: 1, alignSelf: 'center'}}>
                 <Box alignItems={'center'} my = {10}>
                     <Button 
@@ -188,7 +210,6 @@ export default function StandScouter(){
                 </Box>
             </View>
             </NativeBaseProvider>
-            
           </View>
           </ScrollView>
        </SafeAreaView>
