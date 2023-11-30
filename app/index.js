@@ -4,98 +4,104 @@ import { Stack, useRouter, Link } from 'expo-router';
 import { COLORS, icons, images, SIZES } from '../constants';
 import { ScreenHeaderBtn } from '../components'
 
-import { 
-  View,
-  ScrollView,
-  SafeAreaView,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  Image,
-  FlatList
- } from 'react-native'
+import {
+    View,
+    ScrollView,
+    SafeAreaView,
+    Text,
+    TextInput,
+    TouchableOpacity,
+    Image,
+    FlatList
+} from 'react-native'
 
 import styles from '../components/home/welcome/welcome.style'
 
 const jobs = [
-  {
-    name: "Stand Scouter",
-    route: "stand_scouter"  
-  }, 
-  {
-    name: "Pit Scouter",
-    route: "pit_scouter"  
-  }, 
-  {
-    name: "Drive Team",
-    route: "drive_team"  
-  }, 
-  {
-    name: "Stand Scouter Admin",
-    route: "stand_scouter_admin"  
-  }
+    {
+        name: "Stand Scouter",
+        route: "stand_scouter"
+    },
+    {
+        name: "Pit Scouter",
+        route: "pit_scouter"
+    },
+    {
+        name: "Drive Team",
+        route: "drive_team"
+    },
+    {
+        name: "Stand Scouter Admin",
+        route: "stand_scouter_admin"
+    }
 ]
 
 function Welcome() {
-   const router = useRouter();
+    const router = useRouter();
     return (
-      <View>
-        <View style = {styles.container}>
-          <Text style = {styles.BigTeal}> Welcome to TealAlliance </Text>
-          <Text style = {styles.whiteText}> Select Your Current Role </Text>
-        </View>
-  
-        <View style = {styles.tabsContainer}>
-          <FlatList 
+        <View>
+            <View style={styles.container}>
+                <Text style={styles.BigTeal}> Welcome to TealAlliance </Text>
+                <Text style={styles.whiteText}> Select Your Current Role </Text>
+            </View>
+
+            <View style={styles.tabsContainer}>
+                {/* <FlatList 
             data = {jobs}
             renderItem = {({ item }) => (
-              <TouchableOpacity
-              style = {[styles.tab(item.name), {marginBottom: SIZES.xLarge }]}
-              onPress = {() => {
-                router.push(`/${item.route}`)
-              }}
-              >
-                <Text style = {styles.tabText(item.name)}>{item.name}</Text>
-              </TouchableOpacity>
+              
             )}
             keyExtractor = {item => item.name}
             contentContainerStyle = {{columnGap: SIZES.small}}
-          />
+          /> */}
+                <ScrollView>
+                    {jobs.map((item, index) => (
+                        <TouchableOpacity
+                            key={index}
+                            style={[styles.tab(item.name), { marginBottom: SIZES.xLarge }]}
+                            onPress={() => {
+                                router.push(`/${item.route}`)
+                            }}
+                        >
+                            <Text style={styles.tabText(item.name)}>{item.name}</Text>
+                        </TouchableOpacity>
+                    ))}
+                </ScrollView>
+            </View>
         </View>
-      </View>
     )
-  }
+}
 
-export default function Home(){
-   const router = useRouter();
-    return(
-        <SafeAreaView style={{flex: 1, backgroundColor: COLORS.black2 }}>
+export default function Home() {
+    const router = useRouter();
+    return (
+        <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.black2 }}>
             <Stack.Screen
-                options = {{
-                    headerStyle: {backgroundColor: COLORS.teal},
+                options={{
+                    headerStyle: { backgroundColor: COLORS.teal },
                     headerShadowVisible: false,
                     headerLeft: () => (
-                        <ScreenHeaderBtn iconUrl={icons.menu} dimension = "125%" />
+                        <ScreenHeaderBtn iconUrl={icons.menu} dimension="125%" />
                     ),
                     headerRight: () => (
-                        <ScreenHeaderBtn iconUrl={images.tvhead} dimension = "225%"/>
+                        <ScreenHeaderBtn iconUrl={images.tvhead} dimension="225%" />
                     ),
                     headerTitle: "Home",
                     headerTitleAlign: 'center'
                 }}
-                
+
             />
 
-            <ScrollView showVerticalScrollIndicator = {false}>
+            <ScrollView showVerticalScrollIndicator={false}>
                 <View
-                    style = {{
+                    style={{
                         flex: 1,
                         padding: SIZES.medium
                     }}
-                    >
-                        <Welcome/>
-                        
-                    </View>
+                >
+                    <Welcome />
+
+                </View>
             </ScrollView>
 
         </SafeAreaView>
